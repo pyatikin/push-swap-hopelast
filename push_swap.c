@@ -99,6 +99,9 @@ int	main(int argc, char**argv)
 			min_price = evaluation(st, b);
 			sorting(st, b, min_price);
 		}
-		/*printt_stack(st); printf("MOVING = %d\n", st->mas);*/
+		last_step(st);
+		//printt_stack(st); printf("MOVING = %d\n", st->mas);
+		deletet_stack(&st);
+		deletet_stack(&b);
 	}
 }
