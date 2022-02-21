@@ -8,6 +8,12 @@
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
+typedef struct s_numbers{
+	int	min;
+	int	max;
+	int	mid;
+}	t_numbers;
+
 typedef struct _t_node {
 	int				price;
 	int				value;
@@ -22,6 +28,7 @@ typedef struct stack {
 	t_node	*head;
 	t_node	*tail;
 	int		mas;
+	int		min;
 }	t_stack;
 
 int		ft_isdigit(int c);
@@ -45,5 +52,17 @@ void	ft_rrr(t_stack *a, t_stack *b);
 void	ft_rr(t_stack *a, t_stack *b);
 void	sorting(t_stack *a, t_stack *b, int min_price);
 int		pop_front(t_stack *list);
+t_node	*find_min_price(t_stack *b, int min_price);
+void	sorting_if_1(t_stack *a, t_stack *b, t_node *b_tmp, int i);
+void	sorting_if_2(t_stack *a, t_stack *b, t_node *b_tmp, int i);
+void	sorting_if_3(t_stack *a, t_stack *b, t_node *b_tmp, int i);
+void	sorting_if_4(t_stack *a, t_stack *b, t_node *b_tmp, int i);
+void	sorting_if_5(t_stack *a, t_stack *b, t_node *b_tmp, int i);
+void	sorting_if_6(t_stack *a, t_stack *b, t_node *b_tmp, int i);
+void	for_evaluation(t_stack *a, t_stack *b, t_node *tmp, int *min_price);
+void	for_parse_stack(t_stack *a, t_stack *b, t_node **tmp, t_numbers nums);
+void	get_mid(t_node *tmp, t_numbers *nums);
+void	last_step(t_stack *a);
+int		get_place(t_stack *st, int value);
 
 #endif
